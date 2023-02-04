@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@media (max-width: 400px) {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.sidebar  {
+  height: calc(100vh - 60px);
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  border: 1px solid rgba(255,255,255, .3);
+  box-shadow: 0 0 40px -20px black;
+  backdrop-filter: blur(10px);
+  color: white;
+  text-shadow: 1px 1px 0 black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+  position: relative;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  display: table;
+  margin: 0 auto;
+  transition: width .3s, height .3s;
+}
+
+.sidebar-header-title {
+  text-align: center;
+  font-size: 20px;
+  transition: scale .3s;
+}
+
+.sidebar-toggle {
+  background: white;
+  color: black;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 15px;
+  top: 15px;
+  right: -15px;
+}
+
+
+
+@media (max-width: 600px) {
+  display: none;
+}
+
+
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 5px;
+  transition: padding .3s;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: all .3s;
+  border-radius: 100px
+}
+
+.active, sidebar:hover {
+   background: rgba(255,255,255, .15);
+}
+
+span {
+  transition: scale .3s;
+}
+
+i {
+  font-size: 24px;
+  transition: scale .3s;
+}
+
+.sidebar-footer {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+sidebar-small {
+  width: 105px;
+  #{sidebar}-header {
+    .avatar {
+      height: 60px;
+      width: 60px;
+    }
+    
+    .sidebar-header-title {
+      scale: 0;
+    }
+    
+    sidebar-toggle {
+      transform: rotate(100deg);
+    }
+  }
+  
+  #{sidebar}-menu {
+    padding: 0 10px;
+    
+    a {
+      gap: 0;
+      
+      i {
+    
+  }
+    }
+  }
+}
